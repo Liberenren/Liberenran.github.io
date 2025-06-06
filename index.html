@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="木曜日企画です">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>学力テスト</title>
+</head>
+
+<body>
+<header>
+    <div class="header">青藍島学力テスト</div>
+</header>
+
+ <main>
+    <!--1ページ目-->
+    <div class="page active" id="page-1">
+        <div class="yomi_question">
+            <img src="/img/1logo.svg" alt="1のロゴ"><p>以下の下線の漢字の読みを答えよ</p>
+        </div>
+        <div class="yomi_issue">
+
+            <div>
+            <label for="name"><span>彼はとても<span class="text-width">偉大</span>な人物だ。</span></label>
+            <input type="text" class="yomi" name="yomi1" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>世界の<span class="text-width">情勢</span>に関心を持つ。</span></label>
+            <input type="text" class="yomi" name="yomi2" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+           <div>
+            <label for="name"><span>緊急の際には<span class="text-width">避難</span>してください。</span></label>
+            <input type="text" class="yomi" name="yomi3" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+           </div>
+
+           <div>
+            <label for="name"><span>作品を<span class="text-width">鑑賞</span>する力を養う。</span></label>
+            <input type="text" class="yomi" name="yomi4" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>電気を<span class="text-width">節約</span>する方法を考える。</span></label>
+            <input type="text" class="yomi" name="yomi5" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>本を<span class="text-width">寄贈</span>するイベントがある。</span></label>
+            <input type="text" class="yomi" name="yomi6" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span><span class="text-width">統一</span>されたデザインにする。</span></label>
+            <input type="text" class="yomi" name="yomi7" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>新しい技術を<span class="text-width">導入</span>する。</span></label>
+            <input type="text" class="yomi" name="yomi8" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>意見を<span class="text-width">尊重</span>し合うことが大切だ。</span></label>
+            <input type="text" class="yomi" name="yomi9" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+
+            <div>
+            <label for="name"><span>時間に<span class="text-width">厳格</span>な人である。</span></label>
+            <input type="text" class="yomi" name="yomi10" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+            </div>
+        </div>
+    </div>
+
+    <!--2ページ目-->
+    <div class="page" id="page-2">
+        <div class="yomi_question">
+            <img src="/img/2logo.svg" alt="2のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+        <div id="pdf-container">
+            <canvas id="pdf-canvas"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+            <script src="/pdf.js"></script>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="01">下線1「それ」とは何を示していますか。本文から一語で書き抜きなさい。</p>
+            <input type="text" class="page2_01" name="jp_01" required minlength="4" maxlength="8" size="40" style="ime-mode: disabled"/>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="02">次の文が抜けています。どこに入れるが最適でしょうか。</p>
+            <h3 id="sentens_choice">多くの場合、包装紙なんかないほうがよろしいのである。</h3>
+
+            <div>
+                <input type="radio" id="jp1" name="jp_02" value="1" />
+                <label for="jp1">1</label>
+
+                <input type="radio" id="jp2" name="jp_02" value="2" />
+                <label for="jp2">2</label>
+
+                <input type="radio" id="jp3" name="jp_02" value="3" />
+                <label for="jp3">3</label>
+
+                <input type="radio" id="jp4" name="jp_02" value="4" />
+                <label for="jp4">4</label>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="03">下線2「先が見えている」とありますが、ここではどのような意味ですか。最も適当なものを、
+                ア〜エから選びなさい。</p>
+
+                <div>
+                <p><span class="widthborld">ア</span>ここ数年だけは、不足しない量が確保されている</p>
+                <p><span class="widthborld">イ</span>近い将来、なくなってしまうことがわかっている</p>
+                <p><span class="widthborld">ウ</span>ずっと後まで、なくならないように計画している</p>
+                <p><span class="widthborld">エ</span>永久になくならないような方法が見つかっている</p>
+
+                <input type="radio" id="Choice1" name="Choice" value="ア" />
+                <label for="Choice1">ア</label>
+
+                <input type="radio" id="Choice2" name="Choice" value="イ" />
+                <label for="Choice2">イ</label>
+               
+                <input type="radio" id="Choice3" name="Choice" value="ウ" />
+                <label for="Choice3">ウ</label>
+              
+                <input type="radio" id="Choice4" name="Choice" value="エ" />
+                <label for="Choice4">エ</label>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="04">下線3「これは『出た』ゴミではなく『つくった』ゴミなのである」とありますが、意識的に
+            ゴミをつくった例として、どのような行動があげられていますか。当てはまる部分を、文中から十五字で書きぬきなさい。</p>
+            <input type="text" class="page2_01" name="jp5" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="05">この文章の内容と合っているものを、ア〜エから選んで、記号に◯をつけなさい。</p>
+
+            <div>
+                <p><span class="widthborld">ア</span>包装紙をすぐに紙クズにするのではなく再利用するべきである。</p>
+                <p><span class="widthborld">イ</span>包装紙をつくるための時間や労力をもっと少なくするべきである。</p>
+                <p><span class="widthborld">ウ</span>紙クズがふえる原因となっているのは、わたしたちの使う包装紙である。</p>
+                <p><span class="widthborld">エ</span>苦労してつくった包装紙をかんたんに灰にするのはおろかなことだ。</p>
+                
+                <input type="radio" id="contact1" name="contact" value="1" />
+                <label for="contact1">1</label>
+
+                <input type="radio" id="contact2" name="contact" value="2" />
+                <label for="contact2">2</label>
+
+                <input type="radio" id="contact3" name="contact" value="3" />
+                <label for="contact3">3</label>
+
+                <input type="radio" id="contact4" name="contact" value="4" />
+                <label for="contact4">4</label>
+            </div>
+        </div>
+    </div>
+
+    <!--3ページ目-->
+    <div class="page" id="page-3">
+        <div class="yomi_question">
+            <img src="/img/3logo.svg" alt="3のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+
+        <div class="page3">
+            <p class="heading_math" data-number="01">ゆうまさんは、折り紙を 72 枚持っています。 ゆうまさんが持っている折り紙は、こはるさんが持っている折り紙より
+            28 枚少ないです。 こはるさんが持っている折り紙の枚数を求める式を、下の ア から エ
+            までの中から 1 つ選んで、その記号を書きましょう</p>
+
+            <div>
+                <p><span class="widthborld">ア</span>72 + 28</p>
+                <p><span class="widthborld">イ</span>72 - 28</p>
+                <p><span class="widthborld">ウ</span>72 × 28</p>
+                <p><span class="widthborld">エ</span>72 ÷ 28</p>
+
+            <input type="radio" id="math_011" class="math_01" name="math_01" value="ア" />
+            <label for="math_011">ア</label>
+
+            <input type="radio" id="math_012" class="math_01" name="math_01" value="イ" />
+            <label for="math_012">イ</label>
+           
+            <input type="radio" id="math_013" class="math_01" name="math_01" value="ウ" />
+            <label for="math_013">ウ</label>
+          
+            <input type="radio" id="math_014" class="math_01" name="math_01" value="エ" />
+            <label for="math_014">エ</label>
+            </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="02">たくみさんは、はじめに折り紙を何枚か持っていました。 ゆうまさんから 38 枚もらって、全部で 62 枚になりました。
+            このことを、たくみさんがはじめに持っていた折り紙の枚数を□枚として式に表します。
+            下の ア から エ までの中から、正しい式を 1 つ選んで、その記号を書きましょう。</p>
+
+        <div>
+            <p><span class="widthborld">ア</span>62 + 38 = □</p>
+            <p><span class="widthborld">イ</span>□ + 38 = 62</p>
+            <p><span class="widthborld">ウ</span>□ - 62 = 38</p>
+            <p><span class="widthborld">エ</span>□ - 38 = 62</p>
+
+        <input type="radio" id="math_021" class="math_02" name="math_02" value="ア" />
+        <label for="math_021">ア</label>
+
+        <input type="radio" id="math_022" class="math_02" name="math_02" value="イ" />
+        <label for="math_022">イ</label>
+       
+        <input type="radio" id="math_023" class="math_02" name="math_02" value="ウ" />
+        <label for="math_023">ウ</label>
+      
+        <input type="radio" id="math_024" class="math_02" name="math_02" value="エ" />
+        <label for="math_024">エ</label>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="03">図1のような円柱があります。</p>
+        <div class="math_img">
+            <img src="/img/図1図形.png">
+        </div>
+        
+
+        <p class="heading_math">図1の円柱を図2のように切り開くと、展開図ができます</p>
+
+        <div class="math_img">
+            <img src="/img/図2図形.png">
+        </div>
+
+        <p class="heading_math">図1の円柱の展開図を、側面の形を長方形にして、工作用紙にかきます。
+            このとき、長方形の横の長さは、円柱の底面の円周の長さと等しくなります。<br>
+            図1の円柱の展開図はどれですか。
+            下の 1 から 4 までの中から、最もふさわしいものを1つ選べ。</p>
+
+        <div>
+            <div class="math_img">
+                <img src="/img/図形選択.png">
+            </div>
+
+        <input type="radio" id="math_031" class="math_02" name="math_03" value="1" />
+        <label for="math_031">1</label>
+
+        <input type="radio" id="math_032" class="math_02" name="math_03" value="2" />
+        <label for="math_032">2</label>
+       
+        <input type="radio" id="math_033" class="math_02" name="math_03" value="3" />
+        <label for="math_033">3</label>
+      
+        <input type="radio" id="math_034" class="math_02" name="math_03" value="4" />
+        <label for="math_034">4</label>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="04">あいなさんは、家から学校までの歩数を求めます。<br>
+        家から学校までの道のりは540mです。あいなさんの歩幅は一歩につき0.6mとします。家から学校まで何歩ですか？<br>
+        なお、単位は必要ありません。</p>
+        <input type="text" class="page3_input" name="math_041" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="05">たけるさんは、3分間で 180m歩きました。同じ速さで歩き続けると、1800mを歩くのに何分間かかりますか。</p>
+        <input type="text" class="page3_input" name="math_042" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="06">たけるさんは自転車で、家から郵便ポストの前を通って図書館まで行
+            きました。家から図書館まで、5分間かかりました。</p>
+        <div class="math_img">
+            <img src="/img/道のり.png">
+        </div>
+
+        <p class="heading_math">家から郵便ポストまでは、道のりは 600mで、3分間かかり、速さは 分速200mでした。
+            郵便ポストから図書館までは、道のりは400mで、2分間かかり、速さは分速200mでした。
+            家から図書館までの自転車の速さは、分速何mですか。</p>
+        
+        <input type="text" class="page3_input" name="math_043" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+    </div>
+
+    </div>
+    
+
+        <!--4ページ目-->
+    <div class="page" id="page-4">
+        <!-- From Uiverse.io by mrhyddenn --> 
+        <div class="button">
+            <div class="box">H</div>
+            <div class="box">O</div>
+            <div class="box">V</div>
+            <div class="box">E</div>
+            <div class="box">R</div>
+        </div>
+    </div>
+
+        <!--5ページ目-->
+    <div class="page" id="page-5">
+        <div class="yomi_question">
+            <img src="/img/2logo.svg" alt="2のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+    </div>
+    
+    
+    
+ </main>
+
+<footer>
+    <ol class="pagenation">
+        <li><a href="" onclick="changePage('prev', event)">前へ</a></li>
+        <li><a href="" onclick="showPage(1, this)" class="active">1</a></li>
+        <li><a href="" onclick="showPage(2, this); return false;">2</a></li>
+        <li><a href="" onclick="showPage(3, this); return false;">3</a></li>
+        <li><a href="" onclick="showPage(4, this); return false;">4</a></li>
+        <li><a href="" onclick="showPage(5, this); return false;">5</a></li>
+        <li><a href="" onclick="changePage('next', event)">次へ</a></li>
+    </ol>
+</footer>
+<script src="/script.js"></script>
+</body>
+</html>
