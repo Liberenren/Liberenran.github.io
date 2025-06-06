@@ -1,5 +1,5 @@
   let currentPage = 1;
-  const totalPages = 5;
+  const totalPages = 15;
 
   function showPage(pageNum, clickedLink = null, event = null) {
     if (event) event.preventDefault();
@@ -112,7 +112,6 @@ for (let i = 1; i <= 15; i++) {
   setupInputTracking(pageId);
 }
 
-
 //送信用
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -140,28 +139,32 @@ document.addEventListener('DOMContentLoaded', function () {
     async function submitToGAS() {
     saveAnswers();
 
-  try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbznRu0K4H7RHv5BbrX6HDQjblyfTAmpMI2W5pa5BOiiRorMMghVhz_B1TaWZKZgmDJ8/exec', {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'text/plain'
-      },
-      body: JSON.stringify(answers)
-    });
+    try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwWnUVTEngeQiasSuUmoB0hIn-VyYrdyscLe_W_oSRXeGEpeHd2kqYrDCgFmhARo81TsQ/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(answers)
+        });
 
-    if (response.ok) {
-      alert('送信が完了しました。ありがとうございました！');
-    } else {
-      console.error('送信エラー:', response.statusText);
-      alert('送信に失敗しました。もう一度お試しください。');
+        if (response.ok) {
+            const result = await response.json(); // レスポンスをJSONで処理する
+            if (result.result === "OK") {
+                alert('送信が完了しました。ありがとうございました！');
+            } else {
+                console.error('不明なサーバー応答:', result);
+                alert('送信に失敗しました。もう一度お試しください。');
+            }
+        } else {
+            console.error('サーバーエラー:', response.statusText);
+            alert('送信に失敗しました。もう一度お試しください。');
+        }
+    } catch (error) {
+        console.error('ネットワークリクエスト中のエラー:', error);
+        alert('送信に失敗しました。もう一度お試しください。');
     }
-  } catch (error) {
-    console.error('送信エラー:', error);
-    alert('送信に失敗しました。もう一度お試しください。');
-  }
 }
-
 
     const lastPage = document.querySelector('#page-4'); // 必要に応じて #page-5 に
     if (lastPage) {
