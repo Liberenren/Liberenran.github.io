@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         saveAnswers();
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxN6Uy7lkS_djNOyESuwJ0moHRIp7DxvIlJwwNkTRN64epCFeRZqRENJWRU9zLNqq0J/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycby6LTgni8KvDy2EnlylPrtlODUdNWKtzdMVyJ4UL6Y/dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
