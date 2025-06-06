@@ -2,7 +2,7 @@
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   document.addEventListener('DOMContentLoaded', () => {
-    const url = '/img/小6国語.pdf';
+    const url = 'img\小6国語.pdf';
 
     const loadingTask = pdfjsLib.getDocument({
       url: url,
