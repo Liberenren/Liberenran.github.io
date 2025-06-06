@@ -141,12 +141,12 @@ document.addEventListener('DOMContentLoaded', function () {
         saveAnswers();
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxiANheQvrLKdfv6BsdKNuZ6OlRWfFvRM599xOL1-zOMBa-0YO0xE83YpWvosbp2PN1/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbznRu0K4H7RHv5BbrX6HDQjblyfTAmpMI2W5pa5BOiiRorMMghVhz_B1TaWZKZgmDJ8/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ contents: JSON.stringify(answers) }) // ★ここを変更
+                body: JSON.stringify(answers)
             });
 
             alert('送信が完了しました。ありがとうございました！');
