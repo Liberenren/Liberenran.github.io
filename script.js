@@ -138,23 +138,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function submitToGAS() {
-        saveAnswers();
+    saveAnswers();
 
-        try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbznRu0K4H7RHv5BbrX6HDQjblyfTAmpMI2W5pa5BOiiRorMMghVhz_B1TaWZKZgmDJ8/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(answers)
-            });
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbznRu0K4H7RHv5BbrX6HDQjblyfTAmpMI2W5pa5BOiiRorMMghVhz_B1TaWZKZgmDJ8/exec', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin':'*',
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify(answers)
+    });
 
-            alert('送信が完了しました。ありがとうございました！');
-        } catch (error) {
-            console.error('送信エラー:', error);
-            alert('送信に失敗しました。もう一度お試しください。');
-        }
+    if (response.ok) {
+      alert('送信が完了しました。ありがとうございました！');
+    } else {
+      console.error('送信エラー:', response.statusText);
+      alert('送信に失敗しました。もう一度お試しください。');
     }
+  } catch (error) {
+    console.error('送信エラー:', error);
+    alert('送信に失敗しました。もう一度お試しください。');
+  }
+}
+
 
     const lastPage = document.querySelector('#page-4'); // 必要に応じて #page-5 に
     if (lastPage) {
