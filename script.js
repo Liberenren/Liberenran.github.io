@@ -1,5 +1,5 @@
   let currentPage = 1;
-  const totalPages = 15;
+  const totalPages = 5;
 
   function showPage(pageNum, clickedLink = null, event = null) {
     if (event) event.preventDefault();
@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Access-Control-Allow-Origin':'*',
         'Content-Type': 'text/plain'
       },
       body: JSON.stringify(answers)
