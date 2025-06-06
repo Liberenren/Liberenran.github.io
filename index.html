@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="木曜日企画です">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>学力テスト</title>
 </head>
 
@@ -17,7 +17,7 @@
     <!--1ページ目-->
     <div class="page active" id="page-1">
         <div class="yomi_question">
-            <img src="/img/1logo.svg" alt="1のロゴ"><p>以下の下線の漢字の読みを答えよ</p>
+            <img src="img\1logo.svg" alt="1のロゴ"><p>以下の下線の漢字の読みを答えよ</p>
         </div>
         <div class="yomi_issue">
 
@@ -76,12 +76,12 @@
     <!--2ページ目-->
     <div class="page" id="page-2">
         <div class="yomi_question">
-            <img src="/img/2logo.svg" alt="2のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+            <img src="img\2logo.svg" alt="2のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
         </div>
         <div id="pdf-container">
             <canvas id="pdf-canvas"></canvas>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-            <script src="/pdf.js"></script>
+            <script src="pdf.js"></script>
         </div>
 
         <div class="page2">
@@ -165,7 +165,7 @@
     <!--3ページ目-->
     <div class="page" id="page-3">
         <div class="yomi_question">
-            <img src="/img/3logo.svg" alt="3のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+            <img src="img\3logo.svg" alt="3のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
         </div>
 
         <div class="page3">
@@ -221,14 +221,14 @@
     <div class="page3">
         <p class="heading_math" data-number="03">図1のような円柱があります。</p>
         <div class="math_img">
-            <img src="/img/図1図形.png">
+            <img src="img\図1図形.png">
         </div>
         
 
         <p class="heading_math">図1の円柱を図2のように切り開くと、展開図ができます</p>
 
         <div class="math_img">
-            <img src="/img/図2図形.png">
+            <img src="img\図2図形.png">
         </div>
 
         <p class="heading_math">図1の円柱の展開図を、側面の形を長方形にして、工作用紙にかきます。
@@ -238,7 +238,7 @@
 
         <div>
             <div class="math_img">
-                <img src="/img/図形選択.png">
+                <img src="img\図形選択.png">
             </div>
 
         <input type="radio" id="math_031" class="math_02" name="math_03" value="1" />
@@ -271,7 +271,7 @@
         <p class="heading_math" data-number="06">たけるさんは自転車で、家から郵便ポストの前を通って図書館まで行
             きました。家から図書館まで、5分間かかりました。</p>
         <div class="math_img">
-            <img src="/img/道のり.png">
+            <img src="img\道のり.png">
         </div>
 
         <p class="heading_math">家から郵便ポストまでは、道のりは 600mで、3分間かかり、速さは 分速200mでした。
@@ -318,6 +318,6 @@
         <li><a href="" onclick="changePage('next', event)">次へ</a></li>
     </ol>
 </footer>
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
