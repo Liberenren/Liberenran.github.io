@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         saveAnswers();
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxN6Uy7lkS_djNOyESuwJ0moHRIp7DxvIlJwwNkTRN64epCFeRZqRENJWRU9zLNqq0J/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxiANheQvrLKdfv6BsdKNuZ6OlRWfFvRM599xOL1-zOMBa-0YO0xE83YpWvosbp2PN1/exec', {
                 method: 'POST',
                 mode: "no-cors",
                 headers: {
