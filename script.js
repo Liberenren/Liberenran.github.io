@@ -118,21 +118,17 @@ for (let i = 1; i <= 15; i++) {
 document.addEventListener('DOMContentLoaded', function () {
     const answers = {};
 
-    // 保存処理（ページ遷移前などに呼び出し）
     function saveAnswers() {
-        // page 1（読み問題）
         document.querySelectorAll('#page-1 input[type="text"]').forEach((input, i) => {
             answers[`yomi${i + 1}`] = input.value.trim();
         });
 
-        // page 2（国語問題）
         answers['jp_01'] = document.querySelector('input[name="jp"]')?.value.trim() || '';
         answers['jp_02'] = document.querySelector('input[name="jp1"]:checked')?.value || '';
         answers['Choice'] = document.querySelector('input[name="Choice1"]:checked')?.value || '';
         answers['jp5'] = document.querySelector('input[name="jp5"]')?.value.trim() || '';
         answers['contact'] = document.querySelector('input[name="contact1"]:checked')?.value || '';
 
-        // page 3（算数問題）
         answers['math_01'] = document.querySelector('input[name="math_01"]:checked')?.value || '';
         answers['math_02'] = document.querySelector('input[name="math_021"]:checked')?.value || '';
         answers['math_03'] = document.querySelector('input[name="math_031"]:checked')?.value || '';
@@ -141,17 +137,16 @@ document.addEventListener('DOMContentLoaded', function () {
         answers['math_043'] = document.querySelector('input[name="math_043"]')?.value.trim() || '';
     }
 
-    // 送信処理
     async function submitToGAS() {
         saveAnswers();
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxiANheQvrLKdfv6BsdKNuZ6OlRWfFvRM599xOL1-zOMBa-0YO0xE83YpWvosbp2PN1/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxN6Uy7lkS_djNOyESuwJ0moHRIp7DxvIlJwwNkTRN64epCFeRZqRENJWRU9zLNqq0J/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ contents: JSON.stringify(answers) })
+                body: JSON.stringify({ contents: JSON.stringify(answers) }) // ★ここを変更
             });
 
             alert('送信が完了しました。ありがとうございました！');
@@ -161,8 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 最終ページに送信ボタンを追加（任意）
-    const lastPage = document.querySelector('#page-4'); // または #page-5 に変更可
+    const lastPage = document.querySelector('#page-4'); // 必要に応じて #page-5 に
     if (lastPage) {
         const btn = document.createElement('button');
         btn.textContent = '送信する';
