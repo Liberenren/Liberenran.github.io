@@ -46,7 +46,7 @@ function setupInputTracking(pageId) {
   restoreInputs(pageId); // 読み込み時に復元
 }
 
-// 保存処理（localStorageに保存）
+// 保存処理（sessionStorage に保存）
 function saveInputs(pageId) {
   const inputs = document.querySelectorAll(`#${pageId} input, #${pageId} button`);
   const inputValues = {};
@@ -56,28 +56,24 @@ function saveInputs(pageId) {
 
     if (type === "text") {
       inputValues[index] = input.value.trim();
-    }
-
-    else if (type === "radio") {
+    } else if (type === "radio") {
       if (input.checked) {
         inputValues[input.name] = input.value;
       }
-    }
-
-    else if (input.tagName === "BUTTON") {
+    } else if (input.tagName === "BUTTON") {
       inputValues[index] = input.classList.contains("selected");
     }
   });
 
-  // localStorage に保存
-  const allAnswers = JSON.parse(localStorage.getItem("answers") || "{}");
+  // sessionStorage に保存
+  const allAnswers = JSON.parse(sessionStorage.getItem("answers") || "{}");
   allAnswers[pageId] = inputValues;
-  localStorage.setItem("answers", JSON.stringify(allAnswers));
+  sessionStorage.setItem("answers", JSON.stringify(allAnswers));
 }
 
-// 復元処理（localStorageから取得）
+// 復元処理（sessionStorage から取得）
 function restoreInputs(pageId) {
-  const allAnswers = JSON.parse(localStorage.getItem("answers") || "{}");
+  const allAnswers = JSON.parse(sessionStorage.getItem("answers") || "{}");
   const pageAnswers = allAnswers[pageId];
   if (!pageAnswers) return;
 
@@ -88,15 +84,11 @@ function restoreInputs(pageId) {
 
     if (type === "text") {
       input.value = pageAnswers[index] || "";
-    }
-
-    else if (type === "radio") {
+    } else if (type === "radio") {
       if (pageAnswers[input.name] === input.value) {
         input.checked = true;
       }
-    }
-
-    else if (input.tagName === "BUTTON") {
+    } else if (input.tagName === "BUTTON") {
       if (pageAnswers[index]) {
         input.classList.add("selected");
       } else {
@@ -105,6 +97,7 @@ function restoreInputs(pageId) {
     }
   });
 }
+
 
 // 初期化：全ページに対応
 for (let i = 1; i <= 15; i++) {
@@ -137,32 +130,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   async function submitToGAS() {
-    saveAnswers();
+  const answers = JSON.parse(sessionStorage.getItem("answers") || "{}");
 
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwWnUVTEngeQiasSuUmoB0hIn-VyYrdyscLe_W_oSRXeGEpeHd2kqYrDCgFmhARo81TsQ/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: JSON.stringify(answers)
-      });
-
-      if (response.ok) {
-        alert('送信が完了しました。ありがとうございました！');
-      } else {
-        console.error('送信エラー:', response.statusText);
-        alert('送信に失敗しました。もう一度お試しください。');
-      }
-    } catch (error) {
-      console.error('送信エラー:', error);
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzveGSrrZlEycIjk37u_ppWjcGpT9snn4SeyZg_CVsLluqKEKHcTkLyqv_NrZ9tTl7LhA/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify(answers)
+    });
+    
+    if (response.ok) {
+      alert('送信が完了しました。ありがとうございました！');
+      sessionStorage.removeItem("answers");
+    } else {
+      console.error('送信エラー:', response.statusText);
       alert('送信に失敗しました。もう一度お試しください。');
     }
+  } catch (error) {
+    console.error('送信エラー:', error);
+    alert('送信に失敗しました。もう一度お試しください。');
   }
+}
+
 
   // ここでボタンのクリックを検出して送信処理を追加
-  const hoverButton = document.querySelector('#page-4 .button');
+  const hoverButton = document.querySelector('#page-4 .button[data-role="submit-button"]');
   if (hoverButton) {
-    hoverButton.addEventListener('click', submitToGAS);
-  }
+  hoverButton.addEventListener('click', submitToGAS);
+}
+
 });
