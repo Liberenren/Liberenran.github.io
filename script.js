@@ -115,63 +115,54 @@ for (let i = 1; i <= 15; i++) {
 //送信用
 
 document.addEventListener('DOMContentLoaded', function () {
-    const answers = {};
+  const answers = {};
 
-    function saveAnswers() {
-        document.querySelectorAll('#page-1 input[type="text"]').forEach((input, i) => {
-            answers[`yomi${i + 1}`] = input.value.trim();
-        });
+  function saveAnswers() {
+    document.querySelectorAll('#page-1 input[type="text"]').forEach((input, i) => {
+      answers[`yomi${i + 1}`] = input.value.trim();
+    });
 
-        answers['jp_01'] = document.querySelector('input[name="jp"]')?.value.trim() || '';
-        answers['jp_02'] = document.querySelector('input[name="jp1"]:checked')?.value || '';
-        answers['Choice'] = document.querySelector('input[name="Choice1"]:checked')?.value || '';
-        answers['jp5'] = document.querySelector('input[name="jp5"]')?.value.trim() || '';
-        answers['contact'] = document.querySelector('input[name="contact1"]:checked')?.value || '';
+    answers['jp_01'] = document.querySelector('input[name="jp"]')?.value.trim() || '';
+    answers['jp_02'] = document.querySelector('input[name="jp1"]:checked')?.value || '';
+    answers['Choice'] = document.querySelector('input[name="Choice1"]:checked')?.value || '';
+    answers['jp5'] = document.querySelector('input[name="jp5"]')?.value.trim() || '';
+    answers['contact'] = document.querySelector('input[name="contact1"]:checked')?.value || '';
 
-        answers['math_01'] = document.querySelector('input[name="math_01"]:checked')?.value || '';
-        answers['math_02'] = document.querySelector('input[name="math_021"]:checked')?.value || '';
-        answers['math_03'] = document.querySelector('input[name="math_031"]:checked')?.value || '';
-        answers['math_041'] = document.querySelector('input[name="math_041"]')?.value.trim() || '';
-        answers['math_042'] = document.querySelector('input[name="math_042"]')?.value.trim() || '';
-        answers['math_043'] = document.querySelector('input[name="math_043"]')?.value.trim() || '';
-    }
+    answers['math_01'] = document.querySelector('input[name="math_01"]:checked')?.value || '';
+    answers['math_02'] = document.querySelector('input[name="math_021"]:checked')?.value || '';
+    answers['math_03'] = document.querySelector('input[name="math_031"]:checked')?.value || '';
+    answers['math_041'] = document.querySelector('input[name="math_041"]')?.value.trim() || '';
+    answers['math_042'] = document.querySelector('input[name="math_042"]')?.value.trim() || '';
+    answers['math_043'] = document.querySelector('input[name="math_043"]')?.value.trim() || '';
+  }
 
-    async function submitToGAS() {
+  async function submitToGAS() {
     saveAnswers();
 
     try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwWnUVTEngeQiasSuUmoB0hIn-VyYrdyscLe_W_oSRXeGEpeHd2kqYrDCgFmhARo81TsQ/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain'
-            },
-            body: JSON.stringify(answers)
-        });
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwWnUVTEngeQiasSuUmoB0hIn-VyYrdyscLe_W_oSRXeGEpeHd2kqYrDCgFmhARo81TsQ/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(answers)
+      });
 
-        if (response.ok) {
-            const result = await response.json(); // レスポンスをJSONで処理する
-            if (result.result === "OK") {
-                alert('送信が完了しました。ありがとうございました！');
-            } else {
-                console.error('不明なサーバー応答:', result);
-                alert('送信に失敗しました。もう一度お試しください。');
-            }
-        } else {
-            console.error('サーバーエラー:', response.statusText);
-            alert('送信に失敗しました。もう一度お試しください。');
-        }
-    } catch (error) {
-        console.error('ネットワークリクエスト中のエラー:', error);
+      if (response.ok) {
+        alert('送信が完了しました。ありがとうございました！');
+      } else {
+        console.error('送信エラー:', response.statusText);
         alert('送信に失敗しました。もう一度お試しください。');
+      }
+    } catch (error) {
+      console.error('送信エラー:', error);
+      alert('送信に失敗しました。もう一度お試しください。');
     }
-}
+  }
 
-    const lastPage = document.querySelector('#page-4'); // 必要に応じて #page-5 に
-    if (lastPage) {
-        const btn = document.createElement('button');
-        btn.textContent = '送信する';
-        btn.addEventListener('click', submitToGAS);
-        btn.style.marginTop = '20px';
-        lastPage.appendChild(btn);
-    }
+  // ここでボタンのクリックを検出して送信処理を追加
+  const hoverButton = document.querySelector('#page-4 .button');
+  if (hoverButton) {
+    hoverButton.addEventListener('click', submitToGAS);
+  }
 });
