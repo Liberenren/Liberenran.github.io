@@ -114,14 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
       answers[`yomi${i + 1}`] = input.value.trim();
     });
 
-    answers['jp_01'] = document.querySelector('input[name="jp"]')?.value.trim() || '';
-    answers['jp_02'] = document.querySelector('input[name="jp1"]:checked')?.value || '';
-    answers['choice'] = document.querySelector('input[name="choice1"]:checked')?.value || '';
+    answers['jp_01'] = document.querySelector('input[name="jp_01"]')?.value.trim() || '';
+    answers['jp_02'] = document.querySelector('input[name="jp_02"]:checked')?.value || '';
+    answers['choice'] = document.querySelector('input[name="choice"]:checked')?.value || '';
     answers['jp5'] = document.querySelector('input[name="jp5"]')?.value.trim() || '';
-    answers['contact'] = document.querySelector('input[name="contact1"]:checked')?.value || '';
+    answers['contact'] = document.querySelector('input[name="contact"]:checked')?.value || '';
     answers['math_01'] = document.querySelector('input[name="math_01"]:checked')?.value || '';
-    answers['math_02'] = document.querySelector('input[name="math_021"]:checked')?.value || '';
-    answers['math_03'] = document.querySelector('input[name="math_031"]:checked')?.value || '';
+    answers['math_02'] = document.querySelector('input[name="math_02"]:checked')?.value || '';
+    answers['math_03'] = document.querySelector('input[name="math_03"]:checked')?.value || '';
     answers['math_041'] = document.querySelector('input[name="math_041"]')?.value.trim() || '';
     answers['math_042'] = document.querySelector('input[name="math_042"]')?.value.trim() || '';
     answers['math_043'] = document.querySelector('input[name="math_043"]')?.value.trim() || '';
@@ -136,30 +136,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxl2ODNP1DTkj-iwqc0AvyU7pxZdSf2noEtmu7MCauffR1LpSoewIfCzkUtT_9k72NJZw/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzLizIm3y_N5c8ToJ1FPbfaFmLH8rcSnCxSAoID-w5BcMKB0ndyCenw_2G2VX-3GHES9A/exec', {
         method: 'POST',
+        mode: 'cors',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: params.toString()
       });
 
-      if (response.ok) {
-        const text = await response.text();
-        console.log('送信成功:', text);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('送信完了:', result);
+      
+      if (result.status === "success") {
         alert('送信が完了しました。ありがとうございました！');
       } else {
-        const text = await response.text();
-        console.error('送信失敗:', response.status, text);
-        alert('送信に失敗しました。もう一度お試しください。');
+        throw new Error(result.message || '送信に失敗しました');
       }
     } catch (error) {
-      console.error('fetchエラー:', error);
+      console.error('送信エラー:', error);
       alert('送信に失敗しました。もう一度お試しください。');
     }
   }
 
-  const hoverButton = document.querySelector('#page-4 .button[data-role="submit-button"]');
+  const hoverButton = document.querySelector('#page-4 .button');
   if (hoverButton) {
     hoverButton.addEventListener('click', () => {
       const answers = collectAnswers();
