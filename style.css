@@ -12,6 +12,9 @@ body,html {
     padding: 0;
 }
 
+@media screen and (min-width: 1150px) {/* スクリーンサイズが1000px以上の場合に適用 */
+   
+
 header{
     width: 100%;
     height: 200px;
@@ -98,6 +101,41 @@ main {
 /*ここまで共通項*/
 
 /*1ページ目の編集*/
+#page-1 {
+   width: 100%;
+   margin: 0 auto;
+}
+
+.D3 {
+  transform:
+    scale(0.75)
+    rotateY(-30deg)
+    rotateX(45deg)
+    translateZ(4.5rem);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  box-shadow: 1rem 1rem 2rem rgba(0,0,0,0.25);
+  transition: 0.6s ease transform;
+
+  &:hover {
+    transform: scale(1);
+  }
+
+  &::before {
+    transform: translateZ(4rem);
+    &:hover {
+      transform: translateZ(0);
+    }
+  }
+
+  &::after {
+    transform: translateZ(-4rem);
+    &:hover {
+      transform: translateZ(-1px);
+    }
+  }
+}
+
 .yomi_issue {
     width: 100%;
     height: auto;
@@ -111,16 +149,19 @@ main {
 
  .yomi_issue div {
     height: auto;
-    background-color: aquamarine;
-    margin: 20px;
+    width: auto;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: inherit;
  }
 
  .yomi_issue div label{
-    margin: 20px;
+    margin: 25px;
     font-weight: 500;
  }
 
@@ -157,11 +198,10 @@ main {
    margin: 10px 20px;
 }
 
-.heading {
+.heading,.heading_math,.heading_science,.heading_social{
    position: relative;
-   padding-left: 2em;
    font-size: 20px;
-   padding-top: 7px;
+   padding: 7px 2em 30px 2em;
 }
 
 .heading::before {
@@ -174,18 +214,6 @@ main {
    font-size: 26px;
    font-weight: 800;
    border-bottom: 1px solid #e5c046;
-}
-
-.page2_01 {
-   width: 30%;
-   margin-left: 40px;
-   height: 2em;
-}
-
-.page2_01:focus {
-    box-shadow: 0 0 5px 0 rgba(255,153,0,1);
-    border: 2px solid #FFF !important;
-    outline: 0;
 }
 
 #sentens_choice {
@@ -209,12 +237,13 @@ main {
    width: 80%;
    margin: 0 auto;
 }
-.heading_math {
-   position: relative;
-   padding-left: 2em;
-   font-size: 20px;
-   padding-top: 7px;
+
+.page3 {
+   width: 1080px;
+   height: auto;
+   margin: 10px 20px;
 }
+
 
 .heading_math::before {
    content: attr(data-number);
@@ -238,12 +267,106 @@ main {
    margin: 20px 0;
 }
 
-/*?ページの回答送信ボタン*/
+/*5ページ目理科*/
+#page-4 {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.page4 {
+   width: 1080px;
+   height: auto;
+   margin: 10px 20px;
+}
+
+.science_img {
+   width: 50%;
+   height: 30%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 10px auto;
+}
+
+.ScienceImg01 {
+   width: 20%;
+   height: 10%;
+}
+
+.ScienceImg02 {
+   width: 25%;
+   height: 50%;
+}
+
+.science_img > span {
+   margin: 10px auto;
+   font-weight: 900;
+}
+
+.heading_science {
+   position: relative;
+   padding-left: 2em;
+   font-size: 20px;
+   padding-top: 7px;
+}
+
+.border_science {
+   border: solid 1px #000;
+   padding: 30px;
+   font-size: 20px;
+   text-align: center;
+   display: block;
+   margin-bottom: 30px;
+}
+
+.heading_science::before {
+   content: attr(data-number);
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding-bottom: 5px;
+   color: #38ff77;
+   font-size: 26px;
+   font-weight: 800;
+   border-bottom: 1px solid #38ff77;
+}
+.ai {
+   font-size: 1.5em;
+   font-weight: 700;
+}
+
+/*6ページ社会*/
+.page5 {
+   width: 1080px;
+   height: auto;
+   margin: 10px 20px;
+}
+
+.heading_social {
+   position: relative;
+   padding-left: 2em;
+   font-size: 20px;
+   padding-top: 7px;
+}
+
+.heading_social::before {
+   content: attr(data-number);
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding-bottom: 5px;
+   color: #ffde38;
+   font-size: 26px;
+   font-weight: 800;
+   border-bottom: 1px solid #ffde38;
+}
+
+/*6ページの回答送信ボタン*/
 
 #page-6 {
   width: 1000px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 20px auto;
   justify-content: center; /* 中央寄せしたい場合 */
   align-items: center;
   min-height: 600px; /* 高さを確保しておくとレイアウトが安定 */
@@ -306,74 +429,7 @@ main {
   transform: translateY(0);
 }
 
-/*5ページ目理科*/
-#page-4 {
-   width: 80%;
-   margin: 0 auto;
-}
 
-.science_img {
-   width: 50%;
-   height: 30%;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   margin: 10px auto;
-}
-
-.ScienceImg01 {
-   width: 20%;
-   height: 10%;
-}
-
-.ScienceImg02 {
-   width: 25%;
-   height: 50%;
-}
-
-.science_img > span {
-   margin: 10px auto;
-   font-weight: 900;
-}
-
-.heading_science {
-   position: relative;
-   padding-left: 2em;
-   font-size: 20px;
-   padding-top: 7px;
-}
-
-.heading_science::before {
-   content: attr(data-number);
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding-bottom: 5px;
-   color: #38ff77;
-   font-size: 26px;
-   font-weight: 800;
-   border-bottom: 1px solid #38ff77;
-}
-
-/*6ページ社会*/
-.heading_social {
-   position: relative;
-   padding-left: 2em;
-   font-size: 20px;
-   padding-top: 7px;
-}
-
-.heading_social::before {
-   content: attr(data-number);
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding-bottom: 5px;
-   color: #ffde38;
-   font-size: 26px;
-   font-weight: 800;
-   border-bottom: 1px solid #ffde38;
-}
 
  /*以下はフッター*/
  footer {
@@ -425,4 +481,373 @@ main {
     .pagenation li a.disabled {
       pointer-events: none;
       opacity: 0.5;
+}
+
+/* ラジオボタンのスタイリング */
+.radio-button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.radio-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-button__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button__label {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 15px;
+  color: #818181;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.radio-button__custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  transition: all 0.3s ease;
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+  background-color: #4c8bf5;
+  border-color: transparent;
+  transform: scale(0.8);
+  box-shadow: 0 0 20px #4c8bf580;
+}
+
+.radio-button__input:checked + .radio-button__label {
+  color: #4c8bf5;
+}
+
+.radio-button__label:hover .radio-button__custom {
+  transform: scale(1.2);
+  border-color: #4c8bf5;
+  box-shadow: 0 0 20px #4c8bf580;
+}
+
+/* 新しい入力フィールドのスタイル */
+.yomi-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.yomi-input-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.yomi-input-container input[type="text"]:focus {
+  border-color: #4c8bf5;
+  box-shadow: 0 0 10px rgba(76, 139, 245, 0.3);
+  outline: none;
+}
+
+.yomi-input-container .label {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.yomi-input-container input[type="text"]:focus ~ .label,
+.yomi-input-container input[type="text"]:valid ~ .label {
+  top: -30px;
+  font-size: 12px;
+  color: #4c8bf5;
+}
+
+.yomi-input-container .underline {
+  display: none;
+}
+
+/* テキスト入力フィールドのスタイリング */
+/* From Uiverse.io by Satwinder04 */ 
+.input-container {
+  position: relative;
+  width: 200px;
+}
+
+.input-container input[type="text"] {
+   margin-top: 20px;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 15px 0 0 0;
+  background-color: transparent;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+/*名前の記入*/
+/* From Uiverse.io by 0xnihilism */ 
+.input {
+  width: 100%;
+  max-width: 270px;
+  height: 60px;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.input:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.input:focus {
+  background-color: #000;
+  color: #fff;
+  border-color: #ffffff;
+}
+
+.input:focus::placeholder {
+  color: #fff;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.input:focus::after {
+  content: "|";
+  position: absolute;
+  right: 10px;
+  animation: blink 0.7s step-end infinite;
+}
+
+.input:valid {
+  animation: typing 2s steps(30, end);
+}
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+}
+
+.input_your_name {
+  width: 100%;
+  height: 60px;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 0 #000;
+  margin-bottom: 60px;
+}
+
+.input_your_name::placeholder {
+  color: #888;
+}
+
+.input_your_name:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.input_your_name:focus {
+  background-color: #010101;
+  color: #fff;
+  border-color: #d6d9dd;
+}
+
+.input_your_name:focus::placeholder {
+  color: #fff;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.input_your_name:focus {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes glitch {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.input_your_name:not(:placeholder-shown) {
+  animation: glitch 1s linear infinite;
+}
+
+.input_name::after {
+  content: "|";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.input_your_name:focus + .input_name::after {
+  color: #fff;
+}
+
+.input_your_name:not(:placeholder-shown) {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 0 #000;
+}
+
 }
