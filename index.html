@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="木曜日企画です">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>学力テスト</title>
+</head>
+
+<body>
+<header>
+    <div class="header">青藍島学力テスト</div>
+</header>
+
+ <main>
+    <!--1ページ目-->
+    <div class="page active" id="page-1">
+        <div class="yomi_question">
+            <img src="img\1logo.svg" alt="1のロゴ"><p>以下の下線の漢字の読みを答えよ</p>
+        </div>
+        <div class="yomi_issue">
+
+            <div class="D3">
+            <label for="yomi1"><span>彼はとても<span class="text-width">偉大</span>な人物だ。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi1" name="yomi1" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi1" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi2"><span>世界の<span class="text-width">情勢</span>に関心を持つ。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi2" name="yomi2" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi2" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+           <div class="D3">
+            <label for="yomi3"><span>緊急の際には<span class="text-width">避難</span>してください。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi3" name="yomi3" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi3" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+           </div>
+
+           <div class="D3">
+            <label for="yomi4"><span>作品を<span class="text-width">鑑賞</span>する力を養う。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi4" name="yomi4" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi4" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+           </div>
+
+            <div class="D3">
+            <label for="yomi5"><span>電気を<span class="text-width">節約</span>する方法を考える。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi5" name="yomi5" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi5" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi6"><span>本を<span class="text-width">寄贈</span>するイベントがある。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi6" name="yomi6" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi6" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi7"><span><span class="text-width">統一</span>されたデザインにする。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi7" name="yomi7" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi7" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi8"><span>新しい技術を<span class="text-width">導入</span>する。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi8" name="yomi8" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi8" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi9"><span>意見を<span class="text-width">尊重</span>し合うことが大切だ。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi9" name="yomi9" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi9" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+
+            <div class="D3">
+            <label for="yomi10"><span>時間に<span class="text-width">厳格</span>な人である。</span></label>
+            <div class="input-container">
+                <input type="text" class="yomi input-container" id="yomi10" name="yomi10" required minlength="4" maxlength="8" size="16" style="ime-mode: disabled"/>
+                <label for="yomi10" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--2ページ目-->
+    <div class="page" id="page-2">
+        <div class="yomi_question">
+            <img src="img\2logo.svg" alt="2のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+        <div id="pdf-container">
+            <canvas id="pdf-canvas"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+            <script src="pdf.js"></script>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="01">下線1「それ」とは何を示していますか。本文から一語で書き抜きなさい。</p>
+            <div class="input-container">
+                <input type="text" id="jp_01" class="page2_01 input-container" name="jp_01" required minlength="4" maxlength="8" size="40" style="ime-mode: disabled"/>
+                <label for="jp_01" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="02">次の文が抜けています。どこに入れるが最適でしょうか。</p>
+            <h3 id="sentens_choice">多くの場合、包装紙なんかないほうがよろしいのである。</h3>
+
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="jp1" name="jp_02" value="1">
+                    <label class="radio-button__label" for="jp1">
+                        <span class="radio-button__custom"></span>
+                        1
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="jp2" name="jp_02" value="2">
+                    <label class="radio-button__label" for="jp2">
+                        <span class="radio-button__custom"></span>
+                        2
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="jp3" name="jp_02" value="3">
+                    <label class="radio-button__label" for="jp3">
+                        <span class="radio-button__custom"></span>
+                        3
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="jp4" name="jp_02" value="4">
+                    <label class="radio-button__label" for="jp4">
+                        <span class="radio-button__custom"></span>
+                        4
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="03">下線2「先が見えている」とありますが、ここではどのような意味ですか。最も適当なものを、
+                ア〜エから選びなさい。</p>
+
+                <div>
+                <p><span class="widthborld">ア</span>ここ数年だけは、不足しない量が確保されている</p>
+                <p><span class="widthborld">イ</span>近い将来、なくなってしまうことがわかっている</p>
+                <p><span class="widthborld">ウ</span>ずっと後まで、なくならないように計画している</p>
+                <p><span class="widthborld">エ</span>永久になくならないような方法が見つかっている</p>
+
+                <div class="radio-button-container">
+                    <div class="radio-button">
+                        <input type="radio" class="radio-button__input" id="choice1" name="choice" value="ア">
+                        <label class="radio-button__label" for="choice1">
+                            <span class="radio-button__custom"></span>
+                            ア
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" class="radio-button__input" id="choice2" name="choice" value="イ">
+                        <label class="radio-button__label" for="choice2">
+                            <span class="radio-button__custom"></span>
+                            イ
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" class="radio-button__input" id="choice3" name="choice" value="ウ">
+                        <label class="radio-button__label" for="choice3">
+                            <span class="radio-button__custom"></span>
+                            ウ
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" class="radio-button__input" id="choice4" name="choice" value="エ">
+                        <label class="radio-button__label" for="choice4">
+                            <span class="radio-button__custom"></span>
+                            エ
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="04">下線3「これは『出た』ゴミではなく『つくった』ゴミなのである」とありますが、意識的に
+            ゴミをつくった例として、どのような行動があげられていますか。当てはまる部分を、文中から十五字で書きぬきなさい。</p>
+            <div class="input-container">
+                <input type="text" id="jp5" class="page2_01 input-container" name="jp5" required minlength="4" maxlength="15" size="16" style="ime-mode: disabled"/>
+                <label for="jp5" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+        <div class="page2">
+            <p class="heading" data-number="05">この文章の内容と合っているものを、1〜4から選んで、記号に◯をつけなさい。</p>
+
+            <div>
+                <p><span class="widthborld">1</span>包装紙をすぐに紙クズにするのではなく再利用するべきである。</p>
+                <p><span class="widthborld">2</span>包装紙をつくるための時間や労力をもっと少なくするべきである。</p>
+                <p><span class="widthborld">3</span>紙クズがふえる原因となっているのは、わたしたちの使う包装紙である。</p>
+                <p><span class="widthborld">4</span>苦労してつくった包装紙をかんたんに灰にするのはおろかなことだ。</p>
+                
+                <div class="radio-button-container">
+                    <div class="radio-button">
+                        <input type="radio" id="contact1" name="contact" value="1" class="radio-button__input" />
+                        <label for="contact1" class="radio-button__label">
+                            <span class="radio-button__custom"></span>
+                            1
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" id="contact2" name="contact" value="2" class="radio-button__input" />
+                        <label for="contact2" class="radio-button__label">
+                            <span class="radio-button__custom"></span>
+                            2
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" id="contact3" name="contact" value="3" class="radio-button__input" />
+                        <label for="contact3" class="radio-button__label">
+                            <span class="radio-button__custom"></span>
+                            3
+                        </label>
+                    </div>
+
+                    <div class="radio-button">
+                        <input type="radio" id="contact4" name="contact" value="4" class="radio-button__input" />
+                        <label for="contact4" class="radio-button__label">
+                            <span class="radio-button__custom"></span>
+                            4
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--3ページ目-->
+    <div class="page" id="page-3">
+        <div class="yomi_question">
+            <img src="img\3logo.svg" alt="3のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+
+        <div class="page3">
+            <p class="heading_math" data-number="01">せいやは、折り紙を 72 枚持っています。せいやが持っている折り紙は、さやかさんが持っている折り紙より
+            28 枚少ないです。 さやかさんが持っている折り紙の枚数を求める式を、下の ア から エ
+            までの中から 1 つ選んで、その記号を書きましょう</p>
+
+            <div>
+                <p><span class="widthborld">ア</span>72 + 28</p>
+                <p><span class="widthborld">イ</span>72 - 28</p>
+                <p><span class="widthborld">ウ</span>72 × 28</p>
+                <p><span class="widthborld">エ</span>72 ÷ 28</p>
+
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="math_011" name="math_01" value="ア">
+                    <label class="radio-button__label" for="math_011">
+                        <span class="radio-button__custom"></span>
+                        ア
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="math_012" name="math_01" value="イ">
+                    <label class="radio-button__label" for="math_012">
+                        <span class="radio-button__custom"></span>
+                        イ
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="math_013" name="math_01" value="ウ">
+                    <label class="radio-button__label" for="math_013">
+                        <span class="radio-button__custom"></span>
+                        ウ
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="math_014" name="math_01" value="エ">
+                    <label class="radio-button__label" for="math_014">
+                        <span class="radio-button__custom"></span>
+                        エ
+                    </label>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="02">多分まっしーさんは、はじめに折り紙を何枚か持っていました。RINさんから38枚もらって、全部で62枚になりました。
+            このことを、多分まっしーさんがはじめに持っていた折り紙の枚数を□枚として式に表します。
+            下の ア から エ までの中から、正しい式を 1 つ選んで、その記号を書きましょう。</p>
+
+        <div>
+            <p><span class="widthborld">ア</span>62 + 38 = □</p>
+            <p><span class="widthborld">イ</span>□ + 38 = 62</p>
+            <p><span class="widthborld">ウ</span>□ - 62 = 38</p>
+            <p><span class="widthborld">エ</span>□ - 38 = 62</p>
+
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="math_021" class="math_02 radio-button__input" name="math_02" value="ア"/>
+                    <label for="math_021" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        ア
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_022" class="math_02 radio-button__input" name="math_02" value="イ"/>
+                    <label for="math_022" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        イ
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_023" class="math_02 radio-button__input" name="math_02" value="ウ" />
+                    <label for="math_023" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        ウ
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_024" class="math_02 radio-button__input" name="math_02" value="エ"/>
+                    <label for="math_024" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        エ
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="03">図1のような円柱があります。</p>
+        <div class="math_img">
+            <img src="img\図1図形.png">
+        </div>
+        
+
+        <p class="heading_math">図1の円柱を図2のように切り開くと、展開図ができます</p>
+
+        <div class="math_img">
+            <img src="img\図2図形.png">
+        </div>
+
+        <p class="heading_math">図1の円柱の展開図を、側面の形を長方形にして、工作用紙にかきます。
+            このとき、長方形の横の長さは、円柱の底面の円周の長さと等しくなります。<br>
+            図1の円柱の展開図はどれですか。
+            下の 1 から 4 までの中から、最もふさわしいものを1つ選べ。</p>
+
+        <div>
+            <div class="math_img">
+                <img src="img\図形選択.png">
+            </div>
+
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="math_031" class="math_02 radio-button__input" name="math_03" value="1"/>
+                    <label for="math_031" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        1
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_032" class="math_02 radio-button__input" name="math_03" value="2"/>
+                    <label for="math_032" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        2
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_033" class="math_02 radio-button__input" name="math_03" value="3"/>
+                    <label for="math_033" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        3
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="math_034" class="math_02 radio-button__input" name="math_03" value="4" />
+                    <label for="math_034" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        4
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="04">TN_midonoobさんは、家から学校までの歩数を求めます。<br>
+        家から学校までの道のりは540mです。TN_midonoobさんの歩幅は一歩につき0.6mとします。家から学校まで何歩ですか？<br>
+        なお、単位は必要ありません。</p>
+        <div class="input-container">
+            <input type="text" id="math_041" class="page3_input input-container" name="math_041" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+            <label for="math_041" class="label">答えを入力</label>
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="05">紅茶花伝さんは、3分間で 180m歩きました。同じ速さで歩き続けると、1800mを歩くのに何分間かかりますか。</p>
+        <div class="input-container">
+            <input type="text" id="math_042" class="page3_input input-container" name="math_042" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+            <label for="math_042" class="label">答えを入力</label>
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    <div class="page3">
+        <p class="heading_math" data-number="06">Liptonさんは自転車で、家から郵便ポストの前を通って図書館まで行
+            きました。家から図書館まで、5分間かかりました。</p>
+        <div class="math_img">
+            <img src="img\道のり.png">
+        </div>
+
+        <p class="heading_math">家から郵便ポストまでは、道のりは 600mで、3分間かかり、速さは 分速200mでした。
+            郵便ポストから図書館までは、道のりは400mで、2分間かかり、速さは分速200mでした。
+            家から図書館までの自転車の速さは、分速何mですか。</p>
+        
+        <div class="input-container">
+            <input type="text" id="math_043" class="page3_input input-container" name="math_043" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+            <label for="math_043" class="label">答えを入力</label>
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    </div>
+
+        <!--4ページ目-->
+    <div class="page" id="page-4">
+        <div class="yomi_question">
+            <img src="img/4logo.svg" alt="4のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+        <div class="page4">
+            <p class="heading_science" data-number="01">
+                我々は，紅茶を冷やしたり，あまくしたりして飲むために，水と砂糖水を冷とう庫でこおらせることにしました。以下の文を読んで答えよ<br><hr>
+                </p>
+                <p class="heading_science">ジョン万次郎さんは，実験で使用する砂糖水と食塩水をつくるために,水50mLを右のような器具を使ってはかりとることにしました。ジョン万次郎さんが使った器具の名前を書きましょう。</p>
+                
+                <div class="science_img ScienceImg01">
+                    <img src="img/図形3.png">
+                    <span>図3</span>
+                    </div>
+            <div class="input-container">
+                <input type="text" id="science_01" class="page4_input input-container" name="science_01" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+                <label for="science_01" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+        <div class="page4">
+            <p class="heading_science" data-number="02">
+                次の図のように,50の目盛りよりも下まで水を入れました。50mLの水をはかりとるためには,このあとスポイトでどれだけの水を入れるとよいか。
+                <div class="science_img ScienceImg02">
+                    <img src="img/図4.png">
+                    <span>図4</span>
+                    </div>
+            </p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="science_021" name="science_02" value="1">
+                    <label class="radio-button__label" for="science_021">
+                        <span class="radio-button__custom"></span>
+                        2mL
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="science_022" name="science_02" value="2">
+                    <label class="radio-button__label" for="science_022">
+                        <span class="radio-button__custom"></span>
+                        3mL
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="science_023" name="science_02" value="3">
+                    <label class="radio-button__label" for="science_023">
+                        <span class="radio-button__custom"></span>
+                        4mL
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="science_024" name="science_02" value="4">
+                    <label class="radio-button__label" for="science_024">
+                        <span class="radio-button__custom"></span>
+                        6mL
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page4">
+            <p class="heading_science" data-number="03">
+                作った水溶液で以下の実験、結果、予想を確認しました。ガビガビだけど許して
+                <div class="science_img">
+                    <img src="img/図5.png">
+                    <span>図5</span>
+                    </div>
+            </p>
+            <p class="heading_science">
+                この結果から、私の予想が違ってることがわかった。結果の(ア)ということから考え直すと、問題に対するまとめは(イ)と言える。
+                アとイの中に当てはまる文章を選択しろ
+            </p>
+            <p class="ai">ア</p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="science_031" class="science_03 radio-button__input" name="science_03_1" value="1"/>
+                    <label for="science_031" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水は0°C,砂糖水は-1°C,食塩水は-8°Cですべてこおった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_032" class="science_03 radio-button__input" name="science_03_1" value="2" />
+                    <label for="science_032" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水，砂糖水，食塩水は，冷やすとすべてこおった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_033" class="science_03 radio-button__input" name="science_03_1" value="3"/>
+                    <label for="science_033" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        すべてこおるまでの時間は，砂糖水より食塩水が長かった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_034" class="science_03 radio-button__input" name="science_03_1" value="4"/>
+                    <label for="science_034" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水,砂糖水,食塩水は,0°Cのときにすべてこおった
+                    </label><br>
+                </div>
+            </div>
+
+            <p class="ai">イ</p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="science_035" class="science_03 radio-button__input" name="science_03_2" value="1"/>
+                    <label for="science_035" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水は0°C,砂糖水は-1°C,食塩水は-8°Cですべてこおった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_036" class="science_03 radio-button__input" name="science_03_2" value="2"/>
+                    <label for="science_036" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水，砂糖水，食塩水は，冷やすとすべてこおった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_037" class="science_03 radio-button__input" name="science_03_2" value="3" />
+                    <label for="science_037" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        すべてこおるまでの時間は，砂糖水より食塩水が長かった
+                    </label><br>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="science_038" class="science_03 radio-button__input" name="science_03_2" value="4"/>
+                    <label for="science_038" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        水,砂糖水,食塩水は,0°Cのときにすべてこおった
+                    </label><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="page4">
+            <p class="heading_science" data-number="04">
+                俺様は，インターネットを使って，各地の友達から朝のようすの写真を送ってもらいましたが，その中で2枚の写真が気になりました。
+                <div class="science_img">
+                    <img src="img/図6.png">
+                    <span>図6</span>
+                    </div>
+            </p>
+            <p class="heading_science">
+                俺様は2つの現象を調べて、以下にまとめた。__(アンダーバー)に当てはまる言葉をかけ<br>
+                </p>
+                <span class="border_science">
+                    朝，鉄棒に，水てきや氷がついていた。気温が下がり，空気中の____<br>
+                     が冷やされて，水てきや，水てきになったあと氷になる現象が見られた。<br>
+                     左の写真は「つゆ」，右の写真は「とうろ」というらしい。気温のちがいによって，<br>
+                     こと異なる現象が起こることがわかった。
+                </span>
+            <div class="input-container">
+                <input type="text" id="science_04" class="page4_input input-container" name="science_04" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+                <label for="science_04" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+        <div class="page4">
+            <p class="heading_science" data-number="05">
+                我々人類にはすい臓という部分がある。その中の出すホルモンには血液の糖の量を調節する働きをしている。このホルモンが出される部分はなんというか。
+            </p>
+            <div class="input-container">
+                <input type="text" id="science_05" class="page4_input input-container" name="science_05" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+                <label for="science_05" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!--5ページ目-->
+    <div class="page" id="page-5">
+        <div class="yomi_question">
+            <img src="img/5logo.svg" alt="5のロゴ"><p>以下の文章を読み、それぞれの問に答えよ</p>
+        </div>
+        <div class="page5">
+            <p class="heading_social" data-number="01">
+                日本の中で一番面積が大きい都道府県はどこですか？
+            </p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="social_011" name="social_01" value="1">
+                    <label class="radio-button__label" for="social_011">
+                        <span class="radio-button__custom"></span>
+                        北海道
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="social_012" name="social_01" value="2">
+                    <label class="radio-button__label" for="social_012">
+                        <span class="radio-button__custom"></span>
+                        東京都
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="social_013" name="social_01" value="3">
+                    <label class="radio-button__label" for="social_013">
+                        <span class="radio-button__custom"></span>
+                        大阪府
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="social_014" name="social_01" value="4">
+                    <label class="radio-button__label" for="social_014">
+                        <span class="radio-button__custom"></span>
+                        福岡県
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+            <p class="heading_social" data-number="02">
+                中大兄皇子は、ある改革を進めるために中臣鎌足と協力しました。この改革を何といいますか？
+            </p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="social_021" class="social_02 radio-button__input" name="social_02" value="1" />
+                    <label for="social_021" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        明治維新
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_022" class="social_02 radio-button__input" name="social_02" value="2"/>
+                    <label for="social_022" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        平安遷都
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_023" class="social_02 radio-button__input" name="social_02" value="3" />
+                    <label for="social_023" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        大化の改新
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_024" class="social_02 radio-button__input" name="social_02" value="4"/>
+                    <label for="social_024" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        鎌倉幕府
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+            <p class="heading_social" data-number="03">
+                中大兄皇子が関わった大化の改新の後、実際に最初の「大化」と呼ばれる元号（年号）が使われましたが、これは中国の影響を受けて日本で初めて導入されたものです。では、「大化」という元号が初めて使われたのは、次のどの天皇の時代でしょうか？
+            </p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="social_031" class="social_03 radio-button__input" name="social_03" value="1"/>
+                    <label for="social_031" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        崇峻天皇（すしゅんてんのう）
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_032" class="social_03 radio-button__input" name="social_03" value="2" />
+                    <label for="social_032" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        推古天皇（すいこてんのう）
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_033" class="social_03 radio-button__input" name="social_03" value="3"/>
+                    <label for="social_033" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        孝徳天皇（こうとくてんのう）
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_034" class="social_03 radio-button__input" name="social_03" value="4"/>
+                    <label for="social_034" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        天智天皇（てんじてんのう）
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+            <p class="heading_social" data-number="04">
+                太平洋戦争が終わった年はいつですか？
+            </p>
+            <div class="radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" id="social_041" class="social_04 radio-button__input" name="social_04" value="1"/>
+                    <label for="social_041" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        1914
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_042" class="social_04 radio-button__input" name="social_04" value="2"/>
+                    <label for="social_042" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        1939
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_043" class="social_04 radio-button__input" name="social_04" value="3" />
+                    <label for="social_043" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        1945
+                    </label>
+                </div>
+
+                <div class="radio-button">
+                    <input type="radio" id="social_044" class="social_04 radio-button__input" name="social_04" value="4" />
+                    <label for="social_044" class="radio-button__label">
+                        <span class="radio-button__custom"></span>
+                        1950
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+            <p class="heading_social" data-number="05">
+                18歳以上の日本国民が持つ、選挙で議員や首長を選ぶことができる権利を何といいますか？
+            </p>
+            <div class="input-container">
+                <input type="text" id="social_05" class="page6_input input-container" name="social_05" required minlength="1" maxlength="8" size="40" style="ime-mode: disabled"/>
+                <label for="social_05" class="label">答えを入力</label>
+                <div class="underline"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--6ページ目-->
+    <!-- From Uiverse.io by 0xnihilism --> 
+    <div class="page" id="page-6">
+
+        <div class="input_name">
+            <input class="input_your_name" name="text" type="text" placeholder="please your name"/>
+        </div>
+        <!-- From Uiverse.io by mrhyddenn --> 
+        <div class="button">
+            <div class="box">H</div>
+            <div class="box">O</div>
+            <div class="box">V</div>
+            <div class="box">E</div>
+            <div class="box">R</div>
+        </div>
+    </div>
+ </main>
+
+<footer>
+    <ol class="pagenation">
+        <li><a href="" onclick="changePage('prev', event)">前へ</a></li>
+        <li><a href="" onclick="showPage(1, this)" class="active">1</a></li>
+        <li><a href="" onclick="showPage(2, this); return false;">2</a></li>
+        <li><a href="" onclick="showPage(3, this); return false;">3</a></li>
+        <li><a href="" onclick="showPage(4, this); return false;">4</a></li>
+        <li><a href="" onclick="showPage(5, this); return false;">5</a></li>
+        <li><a href="" onclick="showPage(6, this); return false;">6</a></li>
+        <li><a href="" onclick="changePage('next', event)">次へ</a></li>
+    </ol>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
