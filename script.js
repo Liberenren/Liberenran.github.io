@@ -125,6 +125,18 @@ document.addEventListener('DOMContentLoaded', function () {
     answers['math_041'] = document.querySelector('input[name="math_041"]')?.value.trim() || '';
     answers['math_042'] = document.querySelector('input[name="math_042"]')?.value.trim() || '';
     answers['math_043'] = document.querySelector('input[name="math_043"]')?.value.trim() || '';
+    answers['science_01'] = document.querySelector('input[name="science_01"]')?.value.trim() || '';
+    answers['science_02'] = document.querySelector('input[name="science_02"]:checked')?.value || '';
+    answers['science_03_1'] = document.querySelector('input[name="science_03_1"]:checked')?.value || '';
+    answers['science_03_2'] = document.querySelector('input[name="science_03_2"]:checked')?.value || '';
+    answers['science_04'] = document.querySelector('input[name="science_04"]')?.value.trim() || '';
+    answers['science_05'] = document.querySelector('input[name="science_05"]')?.value.trim() || '';
+    answers['social_01'] = document.querySelector('input[name="social_01"]:checked')?.value || '';
+    answers['social_02'] = document.querySelector('input[name="social_02"]:checked')?.value || '';
+    answers['social_03'] = document.querySelector('input[name="social_03"]:checked')?.value || '';
+    answers['social_04'] = document.querySelector('input[name="social_04"]:checked')?.value || '';
+    answers['social_05'] = document.querySelector('input[name="social_05"]')?.value.trim() || '';
+    answers['text'] = document.querySelector('input[name="text"]')?.value.trim() || '';
 
     return answers;
   }
@@ -136,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzLizIm3y_N5c8ToJ1FPbfaFmLH8rcSnCxSAoID-w5BcMKB0ndyCenw_2G2VX-3GHES9A/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbz1wUwNpQaPZEJbfEYdrTzaLFVutwO9srlOQ0_4xBKTKUVxpTVugJ4irVoAXJQQovbcew/exec', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -163,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  const hoverButton = document.querySelector('#page-4 .button');
+  const hoverButton = document.querySelector('#page-6 .button');
   if (hoverButton) {
     hoverButton.addEventListener('click', () => {
       const answers = collectAnswers();
