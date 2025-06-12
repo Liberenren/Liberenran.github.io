@@ -37,7 +37,7 @@ header{
     background-clip: text;
     -webkit-background-clip: text;
 
-    background-image: url(/img/image.jpg);
+    background-image: url(img/image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 40%;
@@ -212,7 +212,7 @@ main {
 .heading_math {
    position: relative;
    padding-left: 2em;
-   font-size: 25px;
+   font-size: 20px;
    padding-top: 7px;
 }
 
@@ -238,9 +238,9 @@ main {
    margin: 20px 0;
 }
 
-/*4ページの回答送信ボタン*/
+/*?ページの回答送信ボタン*/
 
-#page-4 {
+#page-6 {
   width: 1000px;
   max-width: 100%;
   margin: 0 auto;
@@ -304,6 +304,75 @@ main {
 
 .button:hover .box:before {
   transform: translateY(0);
+}
+
+/*5ページ目理科*/
+#page-4 {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.science_img {
+   width: 50%;
+   height: 30%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 10px auto;
+}
+
+.ScienceImg01 {
+   width: 20%;
+   height: 10%;
+}
+
+.ScienceImg02 {
+   width: 25%;
+   height: 50%;
+}
+
+.science_img > span {
+   margin: 10px auto;
+   font-weight: 900;
+}
+
+.heading_science {
+   position: relative;
+   padding-left: 2em;
+   font-size: 20px;
+   padding-top: 7px;
+}
+
+.heading_science::before {
+   content: attr(data-number);
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding-bottom: 5px;
+   color: #38ff77;
+   font-size: 26px;
+   font-weight: 800;
+   border-bottom: 1px solid #38ff77;
+}
+
+/*6ページ社会*/
+.heading_social {
+   position: relative;
+   padding-left: 2em;
+   font-size: 20px;
+   padding-top: 7px;
+}
+
+.heading_social::before {
+   content: attr(data-number);
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding-bottom: 5px;
+   color: #ffde38;
+   font-size: 26px;
+   font-weight: 800;
+   border-bottom: 1px solid #ffde38;
 }
 
  /*以下はフッター*/
